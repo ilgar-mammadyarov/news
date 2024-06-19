@@ -1,0 +1,14 @@
+@if (article(); as article) {
+<div class="wrapper">
+  <div class="bg-image">
+    <img [src]="article.imageUrl" alt="image" />
+  </div>
+  <div class="article">
+    <h3 class="article-title">{{ article.title }}</h3>
+    <h3 class="article-summary">{{ article.description }}</h3>
+    <button mat-button class="article-action" (click)="navigateBack()">
+      Back to homepage <mat-icon>keyboard_backspace</mat-icon>
+    </button>
+  </div>
+</div>
+}

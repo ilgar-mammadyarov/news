@@ -1,0 +1,67 @@
+@import "../../../styles.scss";
+
+$width-full: 100%;
+$font-size-regular: 16px;
+$line-height-regular: 20px;
+$font-weight-semibold: 600;
+$border-color: #eaeaea;
+$gap-size: 45px;
+$min-column-width: 400px;
+
+@mixin font-regular {
+  font-size: $font-size-regular;
+  line-height: $line-height-regular;
+  font-weight: $font-weight-semibold;
+}
+
+.wrapper {
+  max-width: $max-width;
+  padding: 16px 24px;
+  margin: 0 auto;
+
+  .results {
+    color: $gray-01;
+    width: $width-full;
+    padding-bottom: 8px;
+    margin: 16px 0 40px;
+    border-bottom: 1px solid $border-color;
+    @include font-regular;
+  }
+
+  .spinner-holder {
+    width: $width-full;
+
+    mat-spinner {
+      margin: 100px auto 0;
+    }
+  }
+
+  .mat-form-field {
+    max-width: 600px;
+    width: $width-full;
+  }
+
+  .search-label {
+    display: block;
+    color: $gray-01;
+    padding-bottom: 10px;
+    @include font-regular;
+  }
+
+  .search-input::placeholder {
+    color: $gray-02;
+  }
+
+  .article-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $gap-size;
+  }
+}
+
+@media (min-width: 701px) {
+  .wrapper {
+    padding: 50px 75px;
+  }
+}

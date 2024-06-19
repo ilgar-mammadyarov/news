@@ -1,0 +1,33 @@
+<section class="wrapper">
+  <form>
+    <label class="search-label" for="search">Filter by keywords</label>
+    <mat-form-field [appearance]="'outline'" class="mat-form-field">
+      <input
+        matInput
+        id="search"
+        type="text"
+        placeholder="The most successful IT companies in 2020"
+        [formControl]="searchControl"
+        class="search-input"
+      />
+      <mat-icon matIconPrefix>search</mat-icon>
+    </mat-form-field>
+  </form>
+
+  @if (isLoading()) {
+  <div class="spinner-holder">
+    <mat-spinner></mat-spinner>
+  </div>
+  } @else {
+  <h3 class="results">Results: {{ articles().length }}</h3>
+
+  <div class="article-wrapper">
+    @for (article of articles(); track article.id) {
+    <app-article-card
+      [article]="article"
+      [searchText]="searchControl.value || ''"
+    />
+    }
+  </div>
+  }
+</section>

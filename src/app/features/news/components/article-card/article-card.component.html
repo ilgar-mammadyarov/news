@@ -1,0 +1,28 @@
+@if (article(); as article) {
+<mat-card class="article-card" appearance="outlined">
+  <img mat-card-image [src]="article.imageUrl" alt="Photo of a Shiba Inu" />
+  <mat-card-content>
+    <div class="article-card-date">
+      <img src="assets/icons/calendar.svg" alt="calendar icon" />
+      <span>
+        {{ article.publishedAt | ordinalDate }}
+      </span>
+    </div>
+    <h3
+      class="article-card-title"
+      [innerHtml]="article.title | highlighter : searchText()"
+    ></h3>
+    <p
+      class="article-card-summary"
+      [innerHtml]="
+        article.description | truncate : 0 : 100 | highlighter : searchText()
+      "
+    ></p>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-button [routerLink]="['./', article.id]">
+      Read more <mat-icon iconPositionEnd>keyboard_backspace</mat-icon>
+    </a>
+  </mat-card-actions>
+</mat-card>
+}

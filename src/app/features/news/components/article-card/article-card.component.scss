@@ -1,0 +1,59 @@
+@import "../../../../../styles.scss";
+
+.article-card {
+  height: 100%;
+  max-width: 400px;
+
+  img {
+    height: 217px;
+  }
+
+  mat-card-content,
+  mat-card-actions {
+    padding: 25px;
+
+    &:last-child {
+      padding-bottom: 25px;
+      margin-top: auto;
+
+      mat-icon {
+        rotate: 180deg;
+      }
+    }
+  }
+
+  .article-card-date {
+    display: flex;
+    gap: 8px;
+    color: $gray-02;
+    font-size: 14px;
+    font-weight: 300;
+    padding-bottom: 20px;
+
+    img {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
+  .article-card-title,
+  .article-card-summary,
+  button {
+    color: $gray-01;
+  }
+
+  .article-card-title {
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  .article-card-summary {
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  button {
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
